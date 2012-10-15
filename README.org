@@ -1,0 +1,7 @@
+#+title: Train Modeling in VRML
+
+A project for VRML course at AGH UST.
+
+The idea is to extend a given VRML model of a simple model railroad
+provided (see: original/) in whatever interesting way the imagination
+will tell to.

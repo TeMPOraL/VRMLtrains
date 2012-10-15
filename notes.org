@@ -1,0 +1,7 @@
+#+title: VRML Trains Development Notes
+#+startup: hidestars
+
+
+* /b/
+** TODO Write a description of imaginary scene
+   (related to [[http://news.ycombinator.com/item?id=4651008][recent discussion on HackerNews about writing]])
