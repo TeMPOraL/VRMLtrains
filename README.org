@@ -5,3 +5,7 @@ A project for VRML course at AGH UST.
 The idea is to extend a given VRML model of a simple model railroad
 provided (see: original/) in whatever interesting way the imagination
 will tell to.
+
+
+NOTE: Files in original/ were given to the class and were authored by
+a PhD leading the class.
