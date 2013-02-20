@@ -2896,6 +2896,14 @@ Transform {
 translation 6.000000 0 11.000000
 children [
 Inline { url "model4.wrl"}]}
+
+
+Transform {
+translation 6.000000 6.00000 11.000000
+children [
+Inline { url "tinkertest.wrl"}]}
+
+
 Transform {
 translation -68.000000 0 -10.000000
 children [
