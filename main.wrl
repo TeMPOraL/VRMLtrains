@@ -207,10 +207,28 @@ Inline { url "water_train_trains.wrl" }
 
 # Airplane!
 
+
 Transform {
-translation 107.0 45 25.5
+translation 0 100 0
+children [
+DEF PLANE_MAIN_ROT Transform {
+center 0 0 0
+rotation 0 0 0 0
+children [
+Transform {
+translation 100 0 0
+children [
+Transform {
+rotation 0 1 0 0
+children [
+Transform {
+rotation 0 0 1 0.2
 children [
 Inline { url "airplane.wrl" }
+]}
+]}
+]}
+]}
 ]}
 
 
@@ -225,5 +243,20 @@ children [
 DEF Z Transform {
 children [
 Inline { url "wagon1.wrl"}]}]}
+
+DEF PLANE_MAIN_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 45}
+
+DEF PLANE_MAIN_ROT_INTERPOLATOR OrientationInterpolator{
+key [0, 0.5, 1]
+keyValue [0 1 0 0,
+          0 1 0 3.14,
+          0 1 0 6.28]
+}
+
 ROUTE X.fraction_changed TO Y.set_fraction
 ROUTE Y.value_changed TO Z.set_translation
+
+
+ROUTE PLANE_MAIN_TIME_SENSOR.fraction_changed TO PLANE_MAIN_ROT_INTERPOLATOR.set_fraction
+
+ROUTE PLANE_MAIN_ROT_INTERPOLATOR.value_changed TO PLANE_MAIN_ROT.set_rotation
