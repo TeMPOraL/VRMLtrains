@@ -171,6 +171,20 @@ scale 0.5 0.4 0.4
 children [
 Inline { url "lake.wrl"}]}
 
+Transform {
+translation 136.0 -2.5 -50.0
+scale 1.5 1.5 1.5
+children [
+Inline { url "sailboat.wrl" }
+]}
+
+Transform {
+translation 166.0 0 -40.0
+rotation 0 1 0 0.7
+children [
+Inline { url "boat.wrl" }
+]}
+
 
 
 # Active Stuff
