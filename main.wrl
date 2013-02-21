@@ -2,18 +2,20 @@
 # original stuff
 
 #land
-Shape {
-appearance Appearance { material Material { diffuseColor 0 1 0 } }
-geometry Box { size 200 0.05 200 } }
-
-#tracks
 Transform {
-translation 0.0 0.0 0.0
+translation 100.0 0.0 0.0
 children [
-Inline { url "tracks.wrl"}
+Shape {
+appearance Appearance { material Material { diffuseColor 0.274510 0.717647 0.286275 } }
+geometry Box { size 410 0.05 180 } }
 ]}
 
 #viewpoints
+Viewpoint {
+position 0.0 150 150
+orientation 1 0 0 -0.785
+description "overview"}
+
 Viewpoint {
 position -100.000000 40 40
 orientation 1 0 0 -0.785
@@ -107,7 +109,7 @@ Inline { url "forest2.wrl" }
 ]}
 
 Transform {
-translation 200 0 0
+translation 200 0 60
 scale -1 1 -1
 children [
 Inline { url "forest.wrl" }
@@ -127,19 +129,47 @@ children [
 Inline { url "forest.wrl" }
 ]}
 
+#tracks
+Transform {
+translation 0.0 0.0 0.0
+children [
+Inline { url "tracks.wrl"}
+]}
+
+Transform {
+translation 200.0 0.0 0.0
+children [
+Inline { url "tracks.wrl"}
+]}
+
+Transform {
+translation 200.0 0.0 5.5
+children [
+Inline { url "tracks.wrl"}
+]}
+
+
 #TinkerCAD testing
 
-# Transform {
-# translation 6.000000 6.00000 11.000000
-# children [
-# Inline { url "tinkertest.wrl"}]}
+Transform {
+translation 0.0 0.0 0.0
+children [
+Inline { url "train_stopper.wrl"}
+]}
+
+Transform {
+translation 256.000000 1.00000 -12.000000
+scale -1 1 -1
+children [
+Inline { url "station.wrl"}]}
 
 #Lake
 
-# Transform {
-# translation 6.000000 6.00000 11.000000
-# children [
-# Inline { url "lake.wrl"}]}
+Transform {
+translation 156.000000 0.10000 -50.000000
+scale 0.5 0.4 0.4
+children [
+Inline { url "lake.wrl"}]}
 
 
 
@@ -156,10 +186,3 @@ children [
 Inline { url "wagon1.wrl"}]}]}
 ROUTE X.fraction_changed TO Y.set_fraction
 ROUTE Y.value_changed TO Z.set_translation
-
-
-Transform {
-translation 200.0 0.0 0.0
-children [
-Inline { url "tracks.wrl"}
-]}

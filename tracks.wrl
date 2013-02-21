@@ -2,6 +2,20 @@
 Transform {
 translation 0.0 0.0 0.0
 children [
+
+Transform {
+translation -100.0 0.0 0.0
+children [
+Inline { url "train_stopper.wrl"}
+]}
+
+Transform {
+translation 100.0 0.0 0.0
+rotation 0 1 0 3.14
+children [
+Inline { url "train_stopper.wrl"}
+]}
+
 Transform {
 translation -100.000000 0.100000 0.000000
 children [
