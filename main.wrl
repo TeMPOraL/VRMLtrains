@@ -169,20 +169,29 @@ Transform {
 translation 156.000000 0.10000 -50.000000
 scale 0.5 0.4 0.4
 children [
-Inline { url "lake.wrl"}]}
+Inline { url "lake.wrl"}
+]}
 
 Transform {
 translation 136.0 -2.5 -50.0
 scale 1.5 1.5 1.5
 children [
+DEF SAILBOAT_ROTATION Transform {
+rotation 0 0 0 0
+children [
 Inline { url "sailboat.wrl" }
+]}
 ]}
 
 Transform {
 translation 166.0 0 -40.0
 rotation 0 1 0 0.7
 children [
+DEF BOAT_ROTATION Transform {
+rotation 0 0 0 0
+children [
 Inline { url "boat.wrl" }
+]}
 ]}
 
 # Second train
@@ -253,10 +262,24 @@ keyValue [0 1 0 0,
           0 1 0 6.28]
 }
 
+DEF BOATS_TIME_SENSOR TimeSensor {loop TRUE cycleInterval 10}
+
+DEF BOATS_ROTATION_INTERPOLATOR OrientationInterpolator {
+key [0, 0.25, 0.5, 0.75, 1]
+keyValue [1 0 0 0,
+          1 0 0 0.07
+          1 0 0 0
+          1 0 0 -0.07
+          1 0 0 0]
+}
+
 ROUTE X.fraction_changed TO Y.set_fraction
 ROUTE Y.value_changed TO Z.set_translation
 
 
 ROUTE PLANE_MAIN_TIME_SENSOR.fraction_changed TO PLANE_MAIN_ROT_INTERPOLATOR.set_fraction
-
 ROUTE PLANE_MAIN_ROT_INTERPOLATOR.value_changed TO PLANE_MAIN_ROT.set_rotation
+
+ROUTE BOATS_TIME_SENSOR.fraction_changed TO BOATS_ROTATION_INTERPOLATOR.set_fraction
+ROUTE BOATS_ROTATION_INTERPOLATOR.value_changed TO SAILBOAT_ROTATION.set_rotation
+ROUTE BOATS_ROTATION_INTERPOLATOR.value_changed TO BOAT_ROTATION.set_rotation

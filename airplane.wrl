@@ -4,6 +4,7 @@ Transform {
 rotation 1 0 0 -1.57
 scale 0.15 0.15 0.15
 children [
+
 Shape {
 	appearance Appearance {
 		material Material { }
